@@ -24,11 +24,17 @@ struct AddView: View {
                         .resizable()
                         .scaledToFit()
                         .overlay(
-                            TextField("나만의 미션을 만들어봐요!", text: $textFieldText)
+                            TextField("", text: $textFieldText)
                                 .frame(height: 55)
+                                .foregroundColor(Color.MyColorTheme.fontNavyColor)
                                 .padding(.horizontal, 30)
                                 .cornerRadius(10)
                                 .multilineTextAlignment(.leading)
+                                .placeholder(when: textFieldText.isEmpty) {
+                                    Text("나만의 미션을 만들어봐요!").foregroundColor(Color.MyColorTheme.fontLightgrayColor)
+                                        .padding()
+                                        .padding(.horizontal)
+                                }
                         )
                 
                 

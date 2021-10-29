@@ -14,7 +14,11 @@ struct NoItemsView: View {
     var body: some View {
         
         ScrollView {
+            
             VStack {
+                
+                Spacer()
+                
                 Text("나만의 미션을 추가해보세요!")
                     .font(.title)
                     .fontWeight(.semibold)
@@ -28,7 +32,7 @@ struct NoItemsView: View {
                 NavigationLink {
                     AddView()
                 } label: {
-                    Text("미션 추가")
+                    Text("미션 만들기")
                         .foregroundColor(Color.MyColorTheme.beigeColor)
                         .font(.headline)
                         .frame(height: 55)
@@ -53,11 +57,11 @@ struct NoItemsView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.MyColorTheme.beigeColor)
-//        .navigationTitle("미션")
-        .navigationBarTitleDisplayMode(.inline)
     }
     
     
+    
+    //MARK: - FUNCTIONS
     func addAnimation() {
         guard !animate else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -77,7 +81,6 @@ struct NoItemsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             NoItemsView()
-//                .navigationTitle("Title")
         }
     }
 }
