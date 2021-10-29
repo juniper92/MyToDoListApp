@@ -17,7 +17,6 @@ struct ListView: View {
     
     var body: some View {
         VStack {
-            
             HStack {
                 Button {
                     self.isEditing.toggle()
@@ -45,20 +44,34 @@ struct ListView: View {
             .padding(.horizontal)
             .padding(.bottom, 4)
             
-            List {
-                ForEach(listViewModel.items) { item in
-                    ListRowView(item: item)
-                        .onTapGesture {
-                            withAnimation(.linear) {
-                                listViewModel.updateItem(item: item)
-                            }
-                        }
-                }
-                .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform: listViewModel.moveItem)
-                
+            if listViewModel.items.isEmpty {
+                Spacer()
             }
-            .listStyle(PlainListStyle())
+            
+            ZStack {
+                if listViewModel.items.isEmpty {
+                    Text("내 미션을 추가해보세요!")
+                } else {
+                    List {
+                        ForEach(listViewModel.items) { item in
+                            ListRowView(item: item)
+                                .onTapGesture {
+                                    withAnimation(.linear) {
+                                        listViewModel.updateItem(item: item)
+                                    }
+                                }
+                        }
+                        .onDelete(perform: listViewModel.deleteItem)
+                        .onMove(perform: listViewModel.moveItem)
+                    }
+                    .listStyle(PlainListStyle())
+                }
+            }
+            
+            if listViewModel.items.isEmpty {
+                Spacer()
+            }
+            
         }
         .navigationTitle("내 미션")
         .navigationBarTitleDisplayMode(.inline)
@@ -69,21 +82,7 @@ struct ListView: View {
         .sheet(isPresented: $addItemViewIsVisible) {
             AddView()
         }
-//        .navigationBarItems(
-//            leading: EditButton(),
-//            trailing:
-//                NavigationLink("Add", destination: { AddView() })
-//        )
-        
-        //        .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
-        //        Button {
-        //            self.isEditing.toggle()
-        //        } label: {
-        //            Text(isEditing ? "완료" : "편집")
-        //                .frame(width: 80, height: 40)
-        //                .foregroundColor(Color.white)
-        //        }
-        //        .background(Color.MyColorTheme.orangeColor)
+
         
         
     }
