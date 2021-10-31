@@ -34,6 +34,31 @@ extension Color {
         }
         
         
+        // MARK: - 다이어리 노트색상
+        static var lightYellowColor: Color {
+            return Color("ColorLightYellow")
+        }
+        
+        static var lightOrangeColor: Color {
+            return Color("ColorLightOrange")
+        }
+        
+        static var skyBlueColor: Color {
+            return Color("ColorSkyBlue")
+        }
+        
+        static var salmonPinkColor: Color {
+            return Color("ColorSalmonPink")
+        }
+        
+        static var turquoiseColor: Color {
+            return Color("ColorTurquoise")
+        }
+        
+        static var lightPurpleColor: Color {
+            return Color("ColorLightPurple")
+        }
+        
         
         // MARK: - 폰트색상
         static var fontLightgrayColor: Color {
@@ -51,6 +76,7 @@ extension Color {
 }
 
 
+// MARK: - PlaceHolderText Color
 extension View {
     func placeholder<Content: View>(
         when shouldShow: Bool,
@@ -63,3 +89,15 @@ extension View {
             }
         }
 }
+
+
+
+//extension View {
+//    
+//    func getRect() -> CGRect {
+//        #if os(iOS)
+//        return UIScreen.main.bounds
+//        #else
+//        return NSScreen.
+//    }
+//}
