@@ -25,4 +25,4 @@
 <img src = "https://user-images.githubusercontent.com/83053604/139590384-4656b4ca-a4da-4031-a9cc-b81b7bb89d45.png" width = "140" height = "304">
 <img src = "https://user-images.githubusercontent.com/83053604/139590402-7fbfd351-d5e8-4c91-800d-deaac106b668.png" width = "140" height = "304"/>
 
-![image1](https://user-images.githubusercontent.com/83053604/139590303-a295bd8a-6fcd-4c44-960e-c0a6da426c5a.png){width=50%}\ ![image2](https://user-images.githubusercontent.com/83053604/139590369-28eebe01-f7a9-4410-be8c-6ff30b099aa7.png){width=50%}
+![image1](https://user-images.githubusercontent.com/83053604/139590303-a295bd8a-6fcd-4c44-960e-c0a6da426c5a.png)\ ![image2](https://user-images.githubusercontent.com/83053604/139590369-28eebe01-f7a9-4410-be8c-6ff30b099aa7.png)
