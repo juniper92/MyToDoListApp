@@ -93,8 +93,8 @@
 				067EC85C2728E960003F592C /* AddView.swift */,
 				0625AB8D2727EC6D005EACF8 /* ListView.swift */,
 				067EC85A2728E7D6003F592C /* ListRowView.swift */,
-				067EC86427298C02003F592C /* DiaryView.swift */,
 				066CBE1C272A881A0044A361 /* NoItemsView.swift */,
+				067EC86427298C02003F592C /* DiaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
