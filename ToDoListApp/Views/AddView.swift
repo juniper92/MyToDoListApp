@@ -31,7 +31,7 @@ struct AddView: View {
                                 .cornerRadius(10)
                                 .multilineTextAlignment(.leading)
                                 .placeholder(when: textFieldText.isEmpty) {
-                                    Text("나만의 미션을 만들어봐요!").foregroundColor(Color.MyColorTheme.fontLightgrayColor)
+                                    Text("이곳에 입력하세요...").foregroundColor(Color.MyColorTheme.fontLightgrayColor)
                                         .padding()
                                         .padding(.horizontal)
                                 }
@@ -86,6 +86,7 @@ struct AddView_Previews: PreviewProvider {
         NavigationView {
             AddView()
         }
+        .preferredColorScheme(.dark)
         .environmentObject(ListViewModel())
     }
 }

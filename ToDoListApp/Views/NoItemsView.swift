@@ -19,20 +19,20 @@ struct NoItemsView: View {
                 
                 Spacer()
                 
-                Text("나만의 미션을 추가해보세요!")
+                Text("오늘 할 일을 추가해보세요")
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(Color.MyColorTheme.orangeColor)
                     .padding(.bottom)
                 
-                Text("하단의 버튼을 눌러 나만의 미션을 만들어봐요")
+                Text("하단의 버튼을 눌러 시작하세요!")
                     .foregroundColor(Color.MyColorTheme.fontNavyColor)
                     .padding(.bottom, 30)
                 
                 NavigationLink {
                     AddView()
                 } label: {
-                    Text("미션 만들기")
+                    Text("작성하기")
                         .foregroundColor(Color.MyColorTheme.beigeColor)
                         .font(.headline)
                         .frame(height: 55)
