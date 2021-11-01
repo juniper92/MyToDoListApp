@@ -12,7 +12,6 @@
 ##2. 사용 기술
 - Swift
 - SwiftUI
-- Firebase(사용예정)
 
 </br>
 
