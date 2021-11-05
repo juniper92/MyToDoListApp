@@ -13,11 +13,12 @@ struct NoItemsView: View {
     
     var body: some View {
         
-        ScrollView {
+//        ScrollView {
             
             VStack {
                 
                 Spacer()
+                
                 
                 Text("오늘 할 일을 추가해보세요")
                     .font(.title)
@@ -48,15 +49,17 @@ struct NoItemsView: View {
                     y: animate ? 10 : 20)
                 .scaleEffect(animate ? 1.1 : 1.0)
                 .offset(y: animate ? -7 : 0)
+                
+                Spacer()
 
             }
             .multilineTextAlignment(.center)
             .padding(40)
             .onAppear(perform: addAnimation)
             
-        }
+//        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.MyColorTheme.beigeColor)
+        .background(Color.MyColorTheme.beigeColor.ignoresSafeArea())
     }
     
     

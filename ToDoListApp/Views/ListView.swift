@@ -65,7 +65,7 @@ struct ListView: View {
                 }}
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle(listViewModel.items.isEmpty ? "" : "내 미션")
+        .navigationTitle(listViewModel.items.isEmpty ? "" : "할 일")
         .navigationBarTitleDisplayMode(.inline)
         .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
         .sheet(isPresented: $addItemViewIsVisible) {

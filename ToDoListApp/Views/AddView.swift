@@ -53,7 +53,6 @@ struct AddView: View {
             }
             .padding(20)
         }
-        //        .navigationTitle("내 미션 추가")
         .alert(isPresented: $showAlert, content: getAlert)
     }
     
