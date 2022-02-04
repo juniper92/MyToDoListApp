@@ -21,51 +21,51 @@ struct ListView: View {
                 NoItemsView()
                     .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
-                VStack {
-                    HStack {
+                ZStack(alignment: .bottomTrailing) {
+                    VStack {
+                        List {
+                            ForEach(listViewModel.items) { item in
+                                ListRowView(item: item)
+                                    .onTapGesture {
+                                        withAnimation(.linear) {
+                                            listViewModel.updateItem(item: item)
+                                        }
+                                    }
+                            }
+                            .onDelete(perform: listViewModel.deleteItem)
+                            .onMove(perform: listViewModel.moveItem)
+                        }
+                        .listStyle(PlainListStyle())
+                    }
+                    
+                    VStack {
                         Button {
                             self.isEditing.toggle()
                             self.addButtonDisabled.toggle()
                         } label: {
                             if self.isEditing {
-                                Text("완료")
-                                    .font(.title3)
+                                Image(systemName: "checkmark.square.fill")
                             } else {
-                                Image(systemName: "pencil")
+                                Image(systemName: "pencil.circle.fill")
                             }
                         }
-                        
-                        Spacer()
-                        
+
                         Button {
                             self.addItemViewIsVisible.toggle()
                         } label: {
-                            Image(systemName: "plus")
+                            Image(systemName: "plus.circle.fill")
                         }
                         .disabled(addButtonDisabled)
                     }
                     .foregroundColor(Color.MyColorTheme.orangeColor)
                     .font(.title)
-                    .padding(.horizontal)
-                    .padding(.bottom, 4)
+                    .padding(.bottom)
+                    .padding(.trailing)
 
-                    List {
-                        ForEach(listViewModel.items) { item in
-                            ListRowView(item: item)
-                                .onTapGesture {
-                                    withAnimation(.linear) {
-                                        listViewModel.updateItem(item: item)
-                                    }
-                                }
-                        }
-                        .onDelete(perform: listViewModel.deleteItem)
-                        .onMove(perform: listViewModel.moveItem)
-                    }
-                    .listStyle(PlainListStyle())
                 }}
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle(listViewModel.items.isEmpty ? "" : "할 일")
+        .navigationTitle(listViewModel.items.isEmpty ? "" : "오늘 할 일")
         .navigationBarTitleDisplayMode(.inline)
         .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
         .sheet(isPresented: $addItemViewIsVisible) {

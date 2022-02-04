@@ -20,23 +20,22 @@ struct AddView: View {
         
         ScrollView {
             VStack {
-                    Image("mission.card")
-                        .resizable()
-                        .scaledToFit()
-                        .overlay(
-                            TextField("", text: $textFieldText)
-                                .frame(height: 55)
-                                .foregroundColor(Color.MyColorTheme.fontNavyColor)
-                                .padding(.horizontal, 30)
-                                .cornerRadius(10)
-                                .multilineTextAlignment(.leading)
-                                .placeholder(when: textFieldText.isEmpty) {
-                                    Text("이곳에 입력하세요...").foregroundColor(Color.MyColorTheme.fontLightgrayColor)
-                                        .padding()
-                                        .padding(.horizontal)
-                                }
-                        )
-                
+                Image("mission.card")
+                    .resizable()
+                    .scaledToFit()
+                    .overlay(
+                        TextField("", text: $textFieldText)
+                            .frame(height: 55)
+                            .foregroundColor(Color.MyColorTheme.fontNavyColor)
+                            .padding(.horizontal, 30)
+                            .cornerRadius(10)
+                            .multilineTextAlignment(.leading)
+                            .placeholder(when: textFieldText.isEmpty) {
+                                Text("이곳에 입력하세요...").foregroundColor(Color.MyColorTheme.fontLightgrayColor)
+                                    .padding()
+                                    .padding(.horizontal)
+                            }
+                    )
                 
                 Button {
                     saveButtonPressed()
