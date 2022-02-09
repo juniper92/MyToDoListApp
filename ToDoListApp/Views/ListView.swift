@@ -62,15 +62,14 @@ struct ListView: View {
                 if self.isEditing {
                     Text("완료")
                 } else {
-                    Text("편집")
+                    listViewModel.items.isEmpty ?  Text("") : Text("편집")
                 }
             }),
-            
-            trailing: Button(action: {
-                self.addItemViewIsVisible.toggle()
-            }, label: {
-                Text("전체삭제")
 
+            trailing: Button(action: {
+                listViewModel.deleteAllItem()
+            }, label: {
+                listViewModel.items.isEmpty ? Text("") : Text("전체삭제")
             })
                 .disabled(addButtonDisabled)
         )

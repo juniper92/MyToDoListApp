@@ -17,15 +17,12 @@ struct NoItemsView: View {
             
             Spacer()
             
-            Text("오늘 할 일을 추가하기")
+            Text("할 일 추가하기")
                 .font(.title)
                 .fontWeight(.semibold)
                 .foregroundColor(Color.MyColorTheme.orangeColor)
                 .padding(.bottom)
-            
-            Text("버튼 클릭해서 시작")
-                .foregroundColor(Color.MyColorTheme.fontNavyColor)
-                .padding(.bottom, 30)
+
             
             NavigationLink {
                 AddView()
