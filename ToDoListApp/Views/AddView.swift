@@ -63,8 +63,8 @@ struct AddView: View {
     }
     
     func textIsAppropriate() -> Bool {
-        if textFieldText.count < 3 {
-            alertTitle = "3글자 이상 입력해주세요!"
+        if textFieldText.count < 2 {
+            alertTitle = "2글자 이상 입력해주세요!"
             showAlert.toggle()
             return false
         }

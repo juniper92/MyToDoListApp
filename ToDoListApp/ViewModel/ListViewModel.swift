@@ -57,7 +57,7 @@ class ListViewModel: ObservableObject {
     }
     
     func deleteAllItem() {
-        self.items.removeAll()
+        items.removeAll()
     }
     
     

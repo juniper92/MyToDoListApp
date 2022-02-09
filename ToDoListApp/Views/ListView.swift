@@ -45,8 +45,9 @@ struct ListView: View {
                             .resizable()
                             .frame(width: 70, height: 70)
                             .padding()
-                            
                     }
+                    .padding(.bottom)
+                    .disabled(addButtonDisabled)
                 }
             }
         }
