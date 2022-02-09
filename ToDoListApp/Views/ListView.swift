@@ -38,35 +38,43 @@ struct ListView: View {
                         .listStyle(PlainListStyle())
                     }
                     
-                    VStack {
-                        Button {
-                            self.isEditing.toggle()
-                            self.addButtonDisabled.toggle()
-                        } label: {
-                            if self.isEditing {
-                                Image(systemName: "checkmark.square.fill")
-                            } else {
-                                Image(systemName: "pencil.circle.fill")
-                            }
-                        }
-
-                        Button {
-                            self.addItemViewIsVisible.toggle()
-                        } label: {
-                            Image(systemName: "plus.circle.fill")
-                        }
-                        .disabled(addButtonDisabled)
+                    Button {
+                        self.addItemViewIsVisible.toggle()
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .frame(width: 70, height: 70)
+                            .padding()
+                            
                     }
-                    .foregroundColor(Color.MyColorTheme.orangeColor)
-                    .font(.title)
-                    .padding(.bottom)
-                    .padding(.trailing)
-
-                }}
+                }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle(listViewModel.items.isEmpty ? "" : "오늘 할 일")
+        .navigationTitle(listViewModel.items.isEmpty ? "" : "오늘 목표")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(
+            leading:
+                Button(action: {
+                self.isEditing.toggle()
+                self.addButtonDisabled.toggle()
+            }, label: {
+                if self.isEditing {
+                    Text("완료")
+                } else {
+                    Text("편집")
+                }
+            }),
+            
+            trailing: Button(action: {
+                self.addItemViewIsVisible.toggle()
+            }, label: {
+                Text("전체삭제")
+
+            })
+                .disabled(addButtonDisabled)
+        )
+        .accentColor(Color.MyColorTheme.orangeColor)
         .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
         .sheet(isPresented: $addItemViewIsVisible) {
             AddView()

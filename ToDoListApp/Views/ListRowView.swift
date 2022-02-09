@@ -15,16 +15,18 @@ struct ListRowView: View {
             
             Image("mission.card")
                 .resizable()
-                .scaledToFit()
+                .frame(maxWidth: .infinity)
+                .frame(height: 80)
                 .overlay(
                     HStack {
                         Text(item.title)
                             .font(.headline)
-                            .foregroundColor(Color.MyColorTheme.fontDarkgrayColor)
+                            .foregroundColor(item.isCompleted ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontDarkgrayColor)
                         
                         Spacer()
                         
                         Image(systemName: item.isCompleted ? "checkmark.square.fill" : "square")
+                            .frame(width: 40, height: 40)
                             .foregroundColor(item.isCompleted ? Color.MyColorTheme.orangeColor : Color.MyColorTheme.fontNavyColor)
                             .font(.title2)
                     }

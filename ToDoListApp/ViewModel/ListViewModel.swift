@@ -55,4 +55,8 @@ class ListViewModel: ObservableObject {
             UserDefaults.standard.set(encodedData, forKey: itemsKey)
         }
     }
+    
+//    func deleteAllItem(indexSet: IndexSet) {
+//        items.removeAll()
+//    }
 }

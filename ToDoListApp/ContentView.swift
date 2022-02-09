@@ -12,22 +12,22 @@ struct ContentView: View {
     @StateObject var listViewModel: ListViewModel = ListViewModel()
     
     var body: some View {
-        TabView {
+//        TabView {
             NavigationView {
                 ListView()
             }
             .environmentObject(listViewModel)
-            .tabItem {
-                Image(systemName: "list.bullet.rectangle")
-            }
+//            .tabItem {
+//                Image(systemName: "list.bullet.rectangle")
+//            }
             
-            NavigationView {
-                DiaryView()
-            }
-            .tabItem {
-                Image(systemName: "square.and.pencil")
-            }
-        }
+//            NavigationView {
+//                DiaryView()
+//            }
+//            .tabItem {
+//                Image(systemName: "square.and.pencil")
+//            }
+//        }
         .accentColor(Color.MyColorTheme.orangeColor)
     }
 }
