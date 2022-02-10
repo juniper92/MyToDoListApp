@@ -52,6 +52,8 @@ struct NoItemsView: View {
         .onAppear(perform: addAnimation)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.MyColorTheme.beigeColor.ignoresSafeArea())
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
     
     
